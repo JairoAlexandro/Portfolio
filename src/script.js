@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Crear el canvas y configurarlo
     const canvas = document.getElementById('background-canvas');
     const ctx = canvas.getContext("2d");
     let canvasWidth = window.innerWidth;
@@ -7,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
 
-    // Definir los cuadrados con sus propiedades iniciales
     const squares = Array.from({ length: 50 }, () => ({
         x: Math.random() * canvasWidth,
         y: Math.random() * canvasHeight,
@@ -16,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         dy: Math.random() * 2 - 1
     }));
 
-    // Redimensionar el canvas al cambiar el tamaño de la ventana
     function resizeCanvas() {
         canvasWidth = window.innerWidth;
         canvasHeight = window.innerHeight;
@@ -26,23 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("resize", resizeCanvas);
 
-    // Dibujar los cuadrados en el canvas
     function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
-        ctx.fillStyle = "#f3f3f3"; // Color de los cuadrados
+        ctx.clearRect(0, 0, canvas.width, canvas.height); 
+        ctx.fillStyle = "#f3f3f3"; 
 
         squares.forEach((square) => {
             ctx.fillRect(square.x, square.y, square.size, square.size);
         });
     }
 
-    // Actualizar la posición de los cuadrados
     function update() {
         squares.forEach((square) => {
             square.x += square.dx;
             square.y += square.dy;
 
-            // Rebote en los bordes
             if (square.x + square.size > canvasWidth || square.x < 0) {
                 square.dx *= -1;
             }
@@ -53,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Función de animación
     function animate() {
         draw();
         update();
@@ -61,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     animate();
-    // Parte de transición
     const transitionSquare = document.createElement("div");
     transitionSquare.classList.add("transition-square");
     document.body.appendChild(transitionSquare);
@@ -72,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const target = e.target.getAttribute("href");
 
-            // Activar la transición
             transitionSquare.classList.add("active");
 
             setTimeout(() => {
@@ -82,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Verificar la transición al regresar a la página
     if (sessionStorage.getItem("transition") === "true") {
         sessionStorage.removeItem("transition");
         transitionSquare.classList.add("reverse", "active");
@@ -93,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Toggle del menú
 document.getElementById('menu-button').addEventListener('click', () => {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
