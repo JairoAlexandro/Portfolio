@@ -61,17 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(transitionSquare);
 
     const links = document.querySelectorAll("a[href]");
+    const currentOrigin = window.location.origin;
+
     links.forEach(link => {
         link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = e.target.getAttribute("href");
+            const href = link.href;
 
+            // Check if the link is external
+            const isExternal = link.target === "_blank" || (!href.startsWith(currentOrigin) && href.startsWith("http"));
+
+            if (isExternal) return; // Skip external links
+
+            // Prevent default behavior and start the transition
+            e.preventDefault();
             transitionSquare.classList.add("active");
 
             setTimeout(() => {
                 sessionStorage.setItem("transition", "true");
-                window.location.href = target;
-            }, 600);
+                window.location.href = href;
+            }, 600); // Match your CSS transition duration
         });
     });
 
@@ -81,11 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             transitionSquare.classList.remove("reverse", "active");
-        }, 600);
+        }, 600); // Match your CSS transition duration
     }
-});
 
-document.getElementById('menu-button').addEventListener('click', () => {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
+    // Mobile menu toggle
+    const menuButton = document.getElementById('menu-button');
+    if (menuButton) {
+        menuButton.addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        });
+    }
 });

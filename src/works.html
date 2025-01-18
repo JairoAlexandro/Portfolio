@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/dist/output.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stylesWork.css">
   <title>Works</title>
 </head>
 <body class="bg-white text-black">
@@ -37,30 +38,42 @@
       </div>
     </nav>
   </header>
-  <section id="works" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h1 class="text-4xl font-bold text-center">Works</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-      <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-        <h2 class="text-xl font-bold">Project 1</h2>
-        <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc nec odio ultr
-          ices
-          fermentum. Nullam nec nunc nec odio ultrices fermentum.</p>
-        <a href="#" class="block mt-4 px-4 py-2 bg-black text-white rounded-full shadow-md hover:bg-gray-800">View
-          Project</a>
+  <section id="works" class="works-container">
+    <h1 class="works-title">Works</h1>
+    <div class="works-grid">
+      <div class="project-card">
+        <h2 class="project-title">CHICKEN WILD TOURNAMENT</h2>
+        <img src="../images/faviconCWT.png" alt="CWT" class="project-image">
+        <p class="project-description">Interactive web application optimized for mobile, tablet, and desktop. Players compete in 1v1 matches where each one receives an egg, and the winner is determined by the egg's rank.</p>
+        <div class="project-buttons">
+          <a href="https://cwt-five.vercel.app/" class="project-button">Project</a>
+          <a href="https://github.com/JairoAlexandro/Chicken-Wild-Tournament" class="project-button github">GitHub</a>
+        </div>
       </div>
-      <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-        <h2 class="text-xl font-bold">Project 2</h2>
-        <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc nec odio ultr
-          ices
-          fermentum. Nullam nec nunc nec odio ultrices fermentum.</p>
-        <a href="#" class="block mt-4 px-4 py-2 bg-black text-white rounded-full shadow-md hover:bg-gray-800">View
-          Project</a>
+      <div class="project-card">
+        <h2 class="project-title">YOURGAINZ (in process)</h2>
+        <img src="../images/YourGainz_Logo.png" alt="YG" class="project-image">
+        <p class="project-description">Platform with over 200 exercises explained through animations, designed to guide users in their workouts. It includes a ranking system where each user can log and share their personal weightlifting records, promoting motivation and competitiveness.</p>
+        <div class="project-buttons">
+          <a href="" class="project-button">Project</a>
+          <a href="" class="project-button github">GitHub</a>
+        </div>
       </div>
-    </div>
+      <div class="project-card">
+        <h2 class="project-title">To-Do List</h2>
+        <img src="../images/TodoList.png" alt="YG" class="project-image-2">
+        <p class="project-description">This is a web-based To-Do List application built with HTML, CSS, and JavaScript. It uses Bootstrap for layout and user interface design. The application allows users to add, complete, and delete tasks, as well as filter tasks by status (all, completed, not completed). It also includes both dark mode and light mode.</p>
+        <div class="project-buttons">
+          <a href="https://to-do-list-lake-rho.vercel.app/" class="project-button">Project</a>
+          <a href="https://github.com/JairoAlexandro/ToDoList" class="project-button github">GitHub</a>
+        </div>
+      </div>
+      
   </section>
-
+  
+  
+  
   <canvas id="background-canvas" class="absolute top-0 left-0 w-full h-screen -z-10"></canvas>
   <script src="script.js" defer></script>
-  <script src="scriptAbout.js"></script>
 </body>
 </html>
