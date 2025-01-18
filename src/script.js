@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resizeCanvas);
 
     function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); 
-        ctx.fillStyle = "#f3f3f3"; 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#f3f3f3";
 
         squares.forEach((square) => {
             ctx.fillRect(square.x, square.y, square.size, square.size);
@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     animate();
+
+    // Transition logic
     const transitionSquare = document.createElement("div");
     transitionSquare.classList.add("transition-square");
     document.body.appendChild(transitionSquare);
@@ -69,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 sessionStorage.setItem("transition", "true");
                 window.location.href = target;
-            }, 400); 
+            }, 600);
         });
     });
 
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             transitionSquare.classList.remove("reverse", "active");
-        }, 400); 
+        }, 600);
     }
 });
 
