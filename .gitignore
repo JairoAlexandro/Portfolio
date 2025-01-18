@@ -2,7 +2,6 @@
 node_modules/
 
 # Archivos de compilación de Tailwind (si estás usando purgar o un archivo de salida)
-/dist/
 /build/
 
 # Archivos de configuración de editor (si no los quieres compartir)
