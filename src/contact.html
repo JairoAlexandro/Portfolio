@@ -5,41 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/dist/output.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stylesContact.css">
   <title>Contact</title>
 </head>
-<body class="bg-white text-black">
-  <header class="w-full bg-black bg-opacity-90 text-white shadow-md z-10">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <div class="text-xl font-bold">
-          <a href="index.html">Jairo Alexandro</a>
+<header class="w-full bg-black bg-opacity-90 text-white shadow-md z-10">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="text-xl font-bold">
+        <a href="index.html">Jairo Alexandro</a>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-indigo-400">Home</a>
+        <a href="about.html" class="hover:text-indigo-400">About</a>
+        <a href="works.html" class="hover:text-indigo-400">Works</a>
+        <a href="contact.html" class="hover:text-indigo-400">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-button" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-2 space-y-2">
+      <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">Home</a>
+      <a href="about.html" class="block px-4 py-2 hover:bg-gray-700">About</a>
+      <a href="works.html" class="block px-4 py-2 hover:bg-gray-700">Works</a>
+      <a href="contact.html" class="block px-4 py-2 hover:bg-gray-700">Contact</a>
+    </div>
+    </div>
+  </nav>
+</header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+    <section class="bg-gray-100 p-8 rounded-lg shadow-lg">
+      <h1 class="text-4xl font-bold text-center mb-6">Get in Touch</h1>
+      <p class="text-center text-gray-600 mb-4">Feel free to reach out via the form below or use the contact information provided.</p>
+
+      <div class="flex flex-col md:flex-row md:space-x-6 mb-8">
+        <div class="flex-1 text-center bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-2">Contact Information</h2>
+          <p class="text-gray-600">Email: <a href="mailto:your-email@example.com" class="text-indigo-500 hover:underline">jairosf3113@gmail.com</a></p>
+          <p class="text-gray-600">Phone: <a href="tel:+123456789" class="text-indigo-500 hover:underline">+34 722148938</a></p>
         </div>
-        <div class="hidden md:flex space-x-6">
-          <a href="index.html" class="hover:text-indigo-400">Home</a>
-          <a href="about.html" class="hover:text-indigo-400">About</a>
-          <a href="works.html" class="hover:text-indigo-400">Works</a>
-          <a href="contact.html" class="hover:text-indigo-400">Contact</a>
-        </div>
-        <div class="md:hidden">
-          <button id="menu-button" class="focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
+
+        <div class="flex-1">
+          <form id="contact-form" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Your Name:</label>
+              <input type="text" id="name" name="name" required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Your Email:</label>
+              <input type="email" id="email" name="email" required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Your Message:</label>
+              <textarea id="message" name="message" rows="4" required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit"
+                class="sendMessage">
+                Send Message
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden mt-2 space-y-2">
-        <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">Home</a>
-        <a href="about.html" class="block px-4 py-2 hover:bg-gray-700">About</a>
-        <a href="works.html" class="block px-4 py-2 hover:bg-gray-700">Works</a>
-        <a href="contact.html" class="block px-4 py-2 hover:bg-gray-700">Contact</a>
-      </div>
-      </div>
-    </nav>
-  </header>
+    </section>
+  </main>
 
   <canvas id="background-canvas" class="absolute top-0 left-0 w-full h-screen -z-10"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
   <script src="script.js" defer></script>
-  <script src="scriptAbout.js"></script>
 </body>
 </html>
